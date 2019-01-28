@@ -78,3 +78,30 @@ _transponseTable = (table) => {
 module.exports.transponseTable = (table) => {
     return _transponseTable(table);
 }
+
+_rotateTable = (table) => {
+    let rows = [];
+    table.forEach(row => rows.push(row.slice()));
+
+    for(let i=0; i<9; i++){
+        for(let j=0; j<9; j++){
+            // j and i in reversed order to change up rows and columns for transponding
+            table[j][i]=rows[i][-j + 8]; // -j + 8 because we need to fill from bottom to top when rotating
+        }
+    }
+
+    return table;
+}
+
+module.exports.rotateTable = (table, count) => {
+
+    // using modulo 4 because there is no point in rotating more than 4 times
+    // since rotating 5 times results in the same as rotating only once (5 % 4 === 1)
+    let rotateCount = ((count !== undefined) && (count !== null)) ? (count % 4) : 1;
+
+    for(let i=0; i<rotateCount; i++){
+        table = _rotateTable(table);
+    }
+
+    return table;
+}

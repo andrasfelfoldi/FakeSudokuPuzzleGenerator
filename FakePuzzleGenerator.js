@@ -1,12 +1,12 @@
 basePuzzles = require("./BasePuzzles");
 utils = require("./Utils");
-shuffler = require('./Shuffle');
+shuffler = require('./TableTransformer');
 
 puzzle = basePuzzles.getRandomHard();
 
 utils.printTable(puzzle);
 
-puzzle = shuffler.shuffleColumns(puzzle);
+puzzle = shuffler.rotateTable(puzzle);
 
 console.log('\n==================================================');
 console.log('||||||||||||||||||||||||||||||||||||||||||||||||||');
