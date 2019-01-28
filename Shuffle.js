@@ -1,42 +1,19 @@
 randomGenerator = require('./Random');
 
 module.exports.shuffleColumns = (table) => {
-    let first3xColumn = [[], [], []];
-    let second3xColumn = [[], [], []];
-    let third3xColumn = [[], [], []];
+    // shuffling the rows of a transponsed table
+    // is the same is shuffling the columns of a normal table
+    table = _transponseTable(table);
 
-    let column3xNumbers = [first3xColumn, second3xColumn, third3xColumn];
-    let firstPosition = column3xNumbers.splice(randomGenerator.getRandomIntBetween(0, column3xNumbers.length), 1)[0],
-        secondPosition = column3xNumbers.splice(randomGenerator.getRandomIntBetween(0, column3xNumbers.length), 1)[0],
-        thirdPosition = column3xNumbers[0];
+    table = _shuffleRows(table);
 
-    table.forEach(row => {
-        table.forEach((number, j) => {
-            if(j < 3){
-                first3xColumn[j].push(number);
-            }else if(j < 6){
-                second3xColumn[j - 3].push(number);
-            }else{
-                third3xColumn[j - 6].push(number);
-            }
-        });
-    });
+    // transponsing it back
+    table = _transponseTable(table);
 
-    table.forEach((row, i) => {
-        table.forEach((number, j) => {
-            if(j < 3){
-                row[j] = firstPosition[i][j];
-            }else if(j < 6){
-                row[j] = secondPosition[i][j - 3];
-            }else{
-                row[j] = thirdPosition[i][j - 6];
-            }
-        });
-    });
-
+    return table;
 }
 
-module.exports.shuffleRows = (table) => {
+_shuffleRows = (table) => {
     let first3xRows = [],
         second3xRows = [],
         third3xRows = [];
@@ -65,6 +42,10 @@ module.exports.shuffleRows = (table) => {
     return table;
 }
 
+module.exports.shuffleRows = (table) => {
+    return _shuffleRows(table);
+}
+
 _shuffle1xRows = (rows3x) => {
     let firstRow = rows3x[0],
         secondRow = rows3x[1],
@@ -80,7 +61,7 @@ _shuffle1xRows = (rows3x) => {
     return rows3x;
 }
 
-module.exports.transponseTable = (table) => {
+_transponseTable = (table) => {
     let rows = [];
     table.forEach(row => rows.push(row.slice()));
 
@@ -92,4 +73,8 @@ module.exports.transponseTable = (table) => {
     }
 
     return table;
+}
+
+module.exports.transponseTable = (table) => {
+    return _transponseTable(table);
 }

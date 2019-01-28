@@ -6,9 +6,11 @@ puzzle = basePuzzles.getRandomHard();
 
 utils.printTable(puzzle);
 
-puzzle = shuffler.shuffleRows(puzzle);
+puzzle = shuffler.shuffleColumns(puzzle);
 
-console.log('\n==============================================================\n');
+console.log('\n==================================================');
+console.log('||||||||||||||||||||||||||||||||||||||||||||||||||');
+console.log('==================================================\n');
 
 utils.printTable(puzzle);
 
