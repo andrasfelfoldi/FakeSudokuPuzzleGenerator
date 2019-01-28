@@ -105,3 +105,31 @@ module.exports.rotateTable = (table, count) => {
 
     return table;
 }
+
+module.exports.randomizeTableNumbers = (table) => {
+
+    let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+    // mapping base number values to new random values
+    let numberMap = {
+        1: numbers.splice(randomGenerator.getRandomIntBetween(0, numbers.length), 1)[0],
+        2: numbers.splice(randomGenerator.getRandomIntBetween(0, numbers.length), 1)[0],
+        3: numbers.splice(randomGenerator.getRandomIntBetween(0, numbers.length), 1)[0],
+        4: numbers.splice(randomGenerator.getRandomIntBetween(0, numbers.length), 1)[0],
+        5: numbers.splice(randomGenerator.getRandomIntBetween(0, numbers.length), 1)[0],
+        6: numbers.splice(randomGenerator.getRandomIntBetween(0, numbers.length), 1)[0],
+        7: numbers.splice(randomGenerator.getRandomIntBetween(0, numbers.length), 1)[0],
+        8: numbers.splice(randomGenerator.getRandomIntBetween(0, numbers.length), 1)[0],
+        9: numbers[0],
+    }
+
+    table.forEach((row, i) => {
+        row.forEach((number, j) => {
+            if(number){
+                table[i][j]=numberMap[number];
+            }
+        })
+    })
+
+    return table;
+}

@@ -6,7 +6,7 @@ puzzle = basePuzzles.getRandomHard();
 
 utils.printTable(puzzle);
 
-puzzle = shuffler.rotateTable(puzzle);
+puzzle = shuffler.randomizeTableNumbers(puzzle);
 
 console.log('\n==================================================');
 console.log('||||||||||||||||||||||||||||||||||||||||||||||||||');
