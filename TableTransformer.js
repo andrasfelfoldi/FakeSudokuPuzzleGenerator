@@ -106,6 +106,18 @@ module.exports.rotateTable = (table, count) => {
     return table;
 }
 
+module.exports.mirrorTable = (table) => {
+    let rows = [];
+    table.forEach(row => rows.push(row.slice()));
+
+    for(let i=0; i<4; i++){
+        table[i]=rows[8-i];
+        table[8-i]=rows[i];
+    }
+
+    return table;
+}
+
 module.exports.randomizeTableNumbers = (table) => {
 
     let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
