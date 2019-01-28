@@ -51,6 +51,10 @@ module.exports.shuffleRows = (table) => {
         }
     });
 
+    first3xRows = _shuffle1xRows(first3xRows);
+    second3xRows = _shuffle1xRows(second3xRows);
+    third3xRows = _shuffle1xRows(third3xRows);
+
     let available3xRows = [first3xRows, second3xRows, third3xRows];
     let firstPosition = available3xRows.splice(randomGenerator.getRandomIntBetween(0, available3xRows.length), 1)[0],
         secondPosition = available3xRows.splice(randomGenerator.getRandomIntBetween(0, available3xRows.length), 1)[0],
@@ -59,6 +63,21 @@ module.exports.shuffleRows = (table) => {
     table = [...firstPosition, ...secondPosition, ...thirdPosition];
 
     return table;
+}
+
+_shuffle1xRows = (rows3x) => {
+    let firstRow = rows3x[0],
+        secondRow = rows3x[1],
+        thirdRow = rows3x[2];
+
+    let availableRows = [firstRow, secondRow, thirdRow];
+    let firstPosition = availableRows.splice(randomGenerator.getRandomIntBetween(0, availableRows.length), 1)[0],
+        secondPosition = availableRows.splice(randomGenerator.getRandomIntBetween(0, availableRows.length), 1)[0],
+        thirdPosition = availableRows[0];
+
+    rows3x = [firstPosition, secondPosition, thirdPosition];
+
+    return rows3x;
 }
 
 module.exports.transponseTable = (table) => {
