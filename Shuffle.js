@@ -35,3 +35,15 @@ module.exports.shuffleColumns = (table) => {
     });
 
 }
+
+module.exports.transponseTable = (table) => {
+    let rows = [];
+    table.forEach(row => rows.push(row.slice()));
+
+    for(let i=0; i<9; i++){
+        for(let j=0; j<9; j++){
+            // j and i in reversed order to change up rows and columns for transponding
+            table[j][i]=rows[i][j];
+        }
+    }
+}
