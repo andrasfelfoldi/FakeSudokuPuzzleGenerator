@@ -11,7 +11,10 @@ _transformBaseSudokuPuzzle = (puzzle) => {
         puzzle = transformer.transponseTable(puzzle);
     }
     if(randomGenerator.getRandomIntBetween(0, 2)){
-        puzzle = transformer.mirrorTable(puzzle);
+        puzzle = transformer.horizontallyMirrorTable(puzzle);
+    }
+    if(randomGenerator.getRandomIntBetween(0, 2)){
+        puzzle = transformer.verticallyMirrorTable(puzzle);
     }
     puzzle = transformer.randomizeTableNumbers(puzzle);
 

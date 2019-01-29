@@ -1,7 +1,27 @@
 # FakeSudokuPuzzleGenerator
 FakeSudokuPuzzleGenerator generates unique solution sudoku puzzles by randomly altering already existing unique solution sudoku puzzles serving as base puzzles. All of the alterations guarantee that the newly generated sudoku puzzles remain unique solution puzzles with similar difficulty as the base puzzles.
 
-Its called **Fake**SudokuPuzzleGenerator because it does not use backtracking or any similar algorithm to generate the puzzles, it just alters some already existing ones. Since the number of possible alterations that can be performed on a single sudoku puzzle is very high, the fact that the new puzzles are generated using some base puzzles should not be noticeable, so every generated puzzle should feel new.
+Its called **Fake**SudokuPuzzleGenerator because it does not use backtracking or any similar algorithm to generate the puzzles, it just alters some already existing ones. Since the number of possible alterations that can be performed on a single sudoku puzzle is very high, the fact that the new puzzles are generated using some base puzzles should not be noticeable, every generated puzzle should feel new.
+
+## Alterations
+The random alterations used are the following:
++ Shuffling 3 wide columns (6 possible outcomes)
++ Shuffling single columns inside the 3 wide columns (6x6x6 = 216 possible outcomes)
++ Shuffling 3 wide rows (6 possible outcomes)
++ Shuffling single rows inside the 3 wide rows (6x6x6 = 216 possible outcomes)
++ Either transposing the table or not (2 possible outcomes)
++ Rotating the table 0 to 3 times (4 possible outcomes)
++ Either mirroring the table horizontally or not (2 possible outcomes)
++ Either mirroring the table vertically or not (2 possible outcomes)
++ Changing up the original numbers (362880 possible outcomes)
+
+---
+Currently, this generator uses 10 different base puzzles for each difficulty settings. Every time a new puzzle is generated, one is chosen randomly. (10 possible outcomes)
+
+Looking at the amount of different outcomes these alterations can provide, it's safe to say that this "fake" way of generating the puzzles shouldn't be noticeable.
+
+**It is possible to generate the same puzzle with different alterations (eg. shuffling the rows in a way that would result in the same puzzle as simply mirroring the base puzzle horizontally), but this fact shouldn't make a big impact to the overall cardinality of the outcomes.**
+
 
 
 # License
