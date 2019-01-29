@@ -3,6 +3,40 @@ FakeSudokuPuzzleGenerator generates unique solution sudoku puzzles by randomly a
 
 Its called **Fake**SudokuPuzzleGenerator because it does not use backtracking or any similar algorithm to generate the puzzles, it just alters some already existing ones. Since the number of possible alterations that can be performed on a single sudoku puzzle is very high, the fact that the new puzzles are generated using some base puzzles should not be noticeable, every generated puzzle should feel new.
 
+## How to use
+
+### ES5
+```javascript
+// importing
+puzzleGenerator = require('fake-sudoku-puzzle-generator');
+
+// returns an easy puzzle
+easyPuzzle = puzzleGenerator.getEasySudoku();
+
+// returns a medium puzzle
+mediumPuzzle = puzzleGenerator.getMediumSudoku();
+
+// returns a hard puzzle
+hardPuzzle = puzzleGenerator.getHardSudoku();
+```
+
+The generated puzzle is a 2D ```array``` containing 9 ```arrays```, each of which represents a row of the generated puzzle. These rows will contain the initial ```numbers``` and ```null``` values on blank spaces.
+
+Here is an example how it may look like:
+```javascript
+puzzle = [
+    [null, null, null, null, null, null, 2, null, null],
+    [9, 7, 6, null, null, null, null, 5, null],
+    [null, null, null, null, 8, 3, null, null, null],
+    [8, null, 1, null, null, null, null, null, null],
+    [5, null, 7, null, null, null, 6, 4, 1],
+    [null, null, null, 2, null, null, null, null, null],
+    [null, null, null, 8, null, null, null, null, 4],
+    [null, 4, null, null, 9, 5, 3, null, 2],
+    [7, null, 5, null, null, null, null, null, null]
+]
+```
+
 ## Alterations
 The random alterations used are the following:
 + Shuffling 3 wide columns (6 possible outcomes)
