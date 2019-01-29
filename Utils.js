@@ -1,4 +1,4 @@
-module.exports.tableToString = (table) => {
+exports.tableToString = (table) => {
     if(!table){
         return "Not a valid table!";
     }
@@ -13,7 +13,7 @@ module.exports.tableToString = (table) => {
     return tableString;
 }
 
-module.exports.printTable = (table) => {
+exports.printTable = (table) => {
     if(!table){
         return "Not a valid table!";
     }

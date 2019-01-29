@@ -1,5 +1,7 @@
 # FakeSudokuPuzzleGenerator
-FakeSudokuPuzzleGenerator generates a unique solution sudoku puzzle by shuffling around and slightly altering already existing unique solution sudoku puzzles.
+FakeSudokuPuzzleGenerator generates unique solution sudoku puzzles by randomly altering already existing unique solution sudoku puzzles serving as base puzzles. All of the alterations guarantee that the newly generated sudoku puzzles remain unique solution puzzles with similar difficulty as the base puzzles.
+
+Its called **Fake**SudokuPuzzleGenerator because it does not use backtracking or any similar algorithm to generate the puzzles, it just alters some already existing ones. Since the number of possible alterations that can be performed on a single sudoku puzzle is very high, the fact that the new puzzles are generated using some base puzzles should not be noticeable, so every generated puzzle should feel new.
 
 
 # License

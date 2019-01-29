@@ -18,19 +18,19 @@ _transformBaseSudokuPuzzle = (puzzle) => {
     return puzzle;
 }
 
-module.exports.getEasySudoku = () => {
+exports.getEasySudoku = () => {
     let puzzle = basePuzzles.getRandomEasy();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
 
-module.exports.getMediumSudoku = () => {
+exports.getMediumSudoku = () => {
     let puzzle = basePuzzles.getRandomMedium();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
 
-module.exports.getHardSudoku = () => {
+exports.getHardSudoku = () => {
     let puzzle = basePuzzles.getRandomHard();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;

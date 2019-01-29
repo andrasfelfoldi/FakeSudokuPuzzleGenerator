@@ -306,19 +306,19 @@ let hard = [
     [1, 6, null, null, 2, null, null, null, null]],
 ]
 
-module.exports.getRandomEasy = () => {
+exports.getRandomEasy = () => {
     let puzzle = [];
     easy[randomGenerator.getRandomIntBetween(0, easy.length)].forEach(row => puzzle.push(row.slice()));
     return puzzle;
 }
 
-module.exports.getRandomMedium = () => {
+exports.getRandomMedium = () => {
     let puzzle = [];
     medium[randomGenerator.getRandomIntBetween(0, medium.length)].forEach(row => puzzle.push(row.slice()));
     return puzzle;
 }
 
-module.exports.getRandomHard = () => {
+exports.getRandomHard = () => {
     let puzzle = [];
     hard[randomGenerator.getRandomIntBetween(0, hard.length)].forEach(row => puzzle.push(row.slice()));
     return puzzle;

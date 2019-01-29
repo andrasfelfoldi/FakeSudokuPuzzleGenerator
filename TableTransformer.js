@@ -1,6 +1,6 @@
 randomGenerator = require('./Random');
 
-module.exports.shuffleColumns = (table) => {
+exports.shuffleColumns = (table) => {
     // shuffling the rows of a transponsed table
     // is the same is shuffling the columns of a normal table
     table = _transponseTable(table);
@@ -42,7 +42,7 @@ _shuffleRows = (table) => {
     return table;
 }
 
-module.exports.shuffleRows = (table) => {
+exports.shuffleRows = (table) => {
     return _shuffleRows(table);
 }
 
@@ -75,7 +75,7 @@ _transponseTable = (table) => {
     return table;
 }
 
-module.exports.transponseTable = (table) => {
+exports.transponseTable = (table) => {
     return _transponseTable(table);
 }
 
@@ -93,7 +93,7 @@ _rotateTable = (table) => {
     return table;
 }
 
-module.exports.rotateTable = (table, count) => {
+exports.rotateTable = (table, count) => {
 
     // using modulo 4 because there is no point in rotating more than 4 times
     // since rotating 5 times results in the same as rotating only once (5 % 4 === 1)
@@ -106,7 +106,7 @@ module.exports.rotateTable = (table, count) => {
     return table;
 }
 
-module.exports.mirrorTable = (table) => {
+exports.mirrorTable = (table) => {
     let rows = [];
     table.forEach(row => rows.push(row.slice()));
 
@@ -118,7 +118,7 @@ module.exports.mirrorTable = (table) => {
     return table;
 }
 
-module.exports.randomizeTableNumbers = (table) => {
+exports.randomizeTableNumbers = (table) => {
 
     let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
