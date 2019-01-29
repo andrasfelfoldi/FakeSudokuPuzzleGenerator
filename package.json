@@ -16,7 +16,7 @@
     "generator",
     "unique"
   ],
-  "author": "András Felföldi",
+  "author": "andrasfelfoldi <andras.felfoldi@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/andrasfelfoldi/FakeSudokuPuzzleGenerator/issues"
