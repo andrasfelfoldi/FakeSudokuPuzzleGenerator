@@ -106,7 +106,7 @@ exports.rotateTable = (table, count) => {
     return table;
 }
 
-_horizontallyMirrorTable =(table) => {
+_horizontallyMirrorTable = (table) => {
     let rows = [];
     table.forEach(row => rows.push(row.slice()));
 
@@ -119,7 +119,9 @@ _horizontallyMirrorTable =(table) => {
 }
 
 exports.horizontallyMirrorTable = (table) => {
-    return _horizontallyMirrorTable(table);
+    table = _horizontallyMirrorTable(table);
+
+    return table;
 }
 
 exports.verticallyMirrorTable = (table) => {
