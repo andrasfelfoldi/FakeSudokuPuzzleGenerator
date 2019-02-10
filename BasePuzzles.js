@@ -398,6 +398,12 @@ let hard = [
     [1, 6, null, null, 2, null, null, null, null]],
 ]
 
+exports.getRandomVeryEasy = () => {
+    let puzzle = [];
+    veryEasy[randomGenerator.getRandomIntBetween(0, veryEasy.length)].forEach(row => puzzle.push(row.slice()));
+    return puzzle;
+}
+
 exports.getRandomEasy = () => {
     let puzzle = [];
     easy[randomGenerator.getRandomIntBetween(0, easy.length)].forEach(row => puzzle.push(row.slice()));

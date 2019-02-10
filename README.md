@@ -20,6 +20,9 @@ puzzleGenerator = require('fake-sudoku-puzzle-generator');
 
 #### Generating puzzles
 ```javascript
+// returns a very easy puzzle
+veryEasyPuzzle = puzzleGenerator.getVeryEasySudoku();
+
 // returns an easy puzzle
 easyPuzzle = puzzleGenerator.getEasySudoku();
 

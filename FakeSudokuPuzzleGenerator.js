@@ -21,6 +21,12 @@ _transformBaseSudokuPuzzle = (puzzle) => {
     return puzzle;
 }
 
+exports.getVeryEasySudoku = () => {
+    let puzzle = basePuzzles.getRandomVeryEasy();
+    puzzle = _transformBaseSudokuPuzzle(puzzle);
+    return puzzle;
+}
+
 exports.getEasySudoku = () => {
     let puzzle = basePuzzles.getRandomEasy();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
