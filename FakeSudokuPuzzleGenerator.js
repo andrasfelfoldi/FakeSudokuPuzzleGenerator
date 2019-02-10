@@ -1,3 +1,5 @@
+'use strict';
+
 basePuzzles = require("./BasePuzzles");
 utils = require("./Utils");
 transformer = require('./TableTransformer');
@@ -21,25 +23,25 @@ _transformBaseSudokuPuzzle = (puzzle) => {
     return puzzle;
 }
 
-exports.getVeryEasySudoku = () => {
+module.exports.getVeryEasySudoku = () => {
     let puzzle = basePuzzles.getRandomVeryEasy();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
 
-exports.getEasySudoku = () => {
+module.exports.getEasySudoku = () => {
     let puzzle = basePuzzles.getRandomEasy();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
 
-exports.getMediumSudoku = () => {
+module.exports.getMediumSudoku = () => {
     let puzzle = basePuzzles.getRandomMedium();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
 
-exports.getHardSudoku = () => {
+module.exports.getHardSudoku = () => {
     let puzzle = basePuzzles.getRandomHard();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
