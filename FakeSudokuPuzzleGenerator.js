@@ -40,7 +40,7 @@ export const getMediumSudoku = function(){
 }
 
 export const getHardSudoku = function(){
-    let puzzle = basePuzzles.getRandomHard();
+    let puzzle = getRandomHard();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
