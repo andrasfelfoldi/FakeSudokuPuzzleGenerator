@@ -1,5 +1,4 @@
-randomGenerator = require('./Random');
-
+import { getRandomIntBetween } from "./Random";
 let veryEasy = [
     [[null, 8, null, null, null, null, null, null, null],
     [null, 6, null, null, 1, null, null, null, 5],
@@ -398,26 +397,26 @@ let hard = [
     [1, 6, null, null, 2, null, null, null, null]],
 ]
 
-exports.getRandomVeryEasy = function(){
+export const getRandomVeryEasy = function(){
     let puzzle = [];
-    veryEasy[randomGenerator.getRandomIntBetween(0, veryEasy.length)].forEach(row => puzzle.push(row.slice()));
+    veryEasy[getRandomIntBetween(0, veryEasy.length)].forEach(row => puzzle.push(row.slice()));
     return puzzle;
 }
 
-exports.getRandomEasy = function(){
+export const getRandomEasy = function(){
     let puzzle = [];
-    easy[randomGenerator.getRandomIntBetween(0, easy.length)].forEach(row => puzzle.push(row.slice()));
+    easy[getRandomIntBetween(0, easy.length)].forEach(row => puzzle.push(row.slice()));
     return puzzle;
 }
 
-exports.getRandomMedium = function(){
+export const getRandomMedium = function(){
     let puzzle = [];
-    medium[randomGenerator.getRandomIntBetween(0, medium.length)].forEach(row => puzzle.push(row.slice()));
+    medium[getRandomIntBetween(0, medium.length)].forEach(row => puzzle.push(row.slice()));
     return puzzle;
 }
 
-exports.getRandomHard = function(){
+export const getRandomHard = function(){
     let puzzle = [];
-    hard[randomGenerator.getRandomIntBetween(0, hard.length)].forEach(row => puzzle.push(row.slice()));
+    hard[getRandomIntBetween(0, hard.length)].forEach(row => puzzle.push(row.slice()));
     return puzzle;
 }

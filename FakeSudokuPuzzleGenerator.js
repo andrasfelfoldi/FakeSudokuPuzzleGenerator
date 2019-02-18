@@ -1,47 +1,45 @@
-'use strict';
-
-basePuzzles = require("./BasePuzzles");
+import { getRandomVeryEasy, getRandomEasy, getRandomMedium, getRandomHard } from "./BasePuzzles";
 // utils = require("./Utils");
-transformer = require('./TableTransformer');
-randomGenerator = require('./Random');
+import { shuffleColumns, shuffleRows, rotateTable, transponseTable, horizontallyMirrorTable, verticallyMirrorTable, randomizeTableNumbers } from "./TableTransformer";
+import { getRandomIntBetween } from "./Random";
 
 _transformBaseSudokuPuzzle = function(puzzle){
-    puzzle = transformer.shuffleColumns(puzzle);
-    puzzle = transformer.shuffleRows(puzzle);
-    puzzle = transformer.rotateTable(puzzle, randomGenerator.getRandomIntBetween(0, 4));
-    if(randomGenerator.getRandomIntBetween(0, 2)){
-        puzzle = transformer.transponseTable(puzzle);
+    puzzle = shuffleColumns(puzzle);
+    puzzle = shuffleRows(puzzle);
+    puzzle = rotateTable(puzzle, getRandomIntBetween(0, 4));
+    if(getRandomIntBetween(0, 2)){
+        puzzle = transponseTable(puzzle);
     }
-    if(randomGenerator.getRandomIntBetween(0, 2)){
-        puzzle = transformer.horizontallyMirrorTable(puzzle);
+    if(getRandomIntBetween(0, 2)){
+        puzzle = horizontallyMirrorTable(puzzle);
     }
-    if(randomGenerator.getRandomIntBetween(0, 2)){
-        puzzle = transformer.verticallyMirrorTable(puzzle);
+    if(getRandomIntBetween(0, 2)){
+        puzzle = verticallyMirrorTable(puzzle);
     }
-    puzzle = transformer.randomizeTableNumbers(puzzle);
+    puzzle = randomizeTableNumbers(puzzle);
 
     return puzzle;
 }
 
-module.exports.getVeryEasySudoku = function(){
-    let puzzle = basePuzzles.getRandomVeryEasy();
+export const getVeryEasySudoku = function(){
+    let puzzle = getRandomVeryEasy();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
 
-module.exports.getEasySudoku = function(){
-    let puzzle = basePuzzles.getRandomEasy();
+export const getEasySudoku = function(){
+    let puzzle = getRandomEasy();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
 
-module.exports.getMediumSudoku = function(){
-    let puzzle = basePuzzles.getRandomMedium();
+export const getMediumSudoku = function(){
+    let puzzle = getRandomMedium();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
 
-module.exports.getHardSudoku = function(){
+export const getHardSudoku = function(){
     let puzzle = basePuzzles.getRandomHard();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
