@@ -1,11 +1,11 @@
 'use strict';
 
 basePuzzles = require("./BasePuzzles");
-utils = require("./Utils");
+// utils = require("./Utils");
 transformer = require('./TableTransformer');
 randomGenerator = require('./Random');
 
-_transformBaseSudokuPuzzle = (puzzle) => {
+_transformBaseSudokuPuzzle = function(puzzle){
     puzzle = transformer.shuffleColumns(puzzle);
     puzzle = transformer.shuffleRows(puzzle);
     puzzle = transformer.rotateTable(puzzle, randomGenerator.getRandomIntBetween(0, 4));
@@ -23,25 +23,25 @@ _transformBaseSudokuPuzzle = (puzzle) => {
     return puzzle;
 }
 
-module.exports.getVeryEasySudoku = () => {
+module.exports.getVeryEasySudoku = function(){
     let puzzle = basePuzzles.getRandomVeryEasy();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
 
-module.exports.getEasySudoku = () => {
+module.exports.getEasySudoku = function(){
     let puzzle = basePuzzles.getRandomEasy();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
 
-module.exports.getMediumSudoku = () => {
+module.exports.getMediumSudoku = function(){
     let puzzle = basePuzzles.getRandomMedium();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;
 }
 
-module.exports.getHardSudoku = () => {
+module.exports.getHardSudoku = function(){
     let puzzle = basePuzzles.getRandomHard();
     puzzle = _transformBaseSudokuPuzzle(puzzle);
     return puzzle;

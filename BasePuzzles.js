@@ -398,25 +398,25 @@ let hard = [
     [1, 6, null, null, 2, null, null, null, null]],
 ]
 
-exports.getRandomVeryEasy = () => {
+exports.getRandomVeryEasy = function(){
     let puzzle = [];
     veryEasy[randomGenerator.getRandomIntBetween(0, veryEasy.length)].forEach(row => puzzle.push(row.slice()));
     return puzzle;
 }
 
-exports.getRandomEasy = () => {
+exports.getRandomEasy = function(){
     let puzzle = [];
     easy[randomGenerator.getRandomIntBetween(0, easy.length)].forEach(row => puzzle.push(row.slice()));
     return puzzle;
 }
 
-exports.getRandomMedium = () => {
+exports.getRandomMedium = function(){
     let puzzle = [];
     medium[randomGenerator.getRandomIntBetween(0, medium.length)].forEach(row => puzzle.push(row.slice()));
     return puzzle;
 }
 
-exports.getRandomHard = () => {
+exports.getRandomHard = function(){
     let puzzle = [];
     hard[randomGenerator.getRandomIntBetween(0, hard.length)].forEach(row => puzzle.push(row.slice()));
     return puzzle;

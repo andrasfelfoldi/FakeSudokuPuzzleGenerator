@@ -1,6 +1,6 @@
 randomGenerator = require('./Random');
 
-exports.shuffleColumns = (table) => {
+exports.shuffleColumns = function(table){
     // shuffling the rows of a transponsed table
     // is the same is shuffling the columns of a normal table
     table = _transponseTable(table);
@@ -13,7 +13,7 @@ exports.shuffleColumns = (table) => {
     return table;
 }
 
-_shuffleRows = (table) => {
+_shuffleRows = function(table){
     let first3xRows = [],
         second3xRows = [],
         third3xRows = [];
@@ -42,11 +42,11 @@ _shuffleRows = (table) => {
     return table;
 }
 
-exports.shuffleRows = (table) => {
+exports.shuffleRows = function(table){
     return _shuffleRows(table);
 }
 
-_shuffle1xRows = (rows3x) => {
+_shuffle1xRows = function(rows3x){
     let firstRow = rows3x[0],
         secondRow = rows3x[1],
         thirdRow = rows3x[2];
@@ -61,7 +61,7 @@ _shuffle1xRows = (rows3x) => {
     return rows3x;
 }
 
-_transponseTable = (table) => {
+_transponseTable = function(table){
     let rows = [];
     table.forEach(row => rows.push(row.slice()));
 
@@ -75,11 +75,11 @@ _transponseTable = (table) => {
     return table;
 }
 
-exports.transponseTable = (table) => {
+exports.transponseTable = function(table){
     return _transponseTable(table);
 }
 
-_rotateTable = (table) => {
+_rotateTable = function(table){
     let rows = [];
     table.forEach(row => rows.push(row.slice()));
 
@@ -93,7 +93,7 @@ _rotateTable = (table) => {
     return table;
 }
 
-exports.rotateTable = (table, count) => {
+exports.rotateTable = function(table, count){
 
     // using modulo 4 because there is no point in rotating more than 4 times
     // since rotating 5 times results in the same as rotating only once (5 % 4 === 1)
@@ -106,7 +106,7 @@ exports.rotateTable = (table, count) => {
     return table;
 }
 
-_horizontallyMirrorTable = (table) => {
+_horizontallyMirrorTable = function(table){
     let rows = [];
     table.forEach(row => rows.push(row.slice()));
 
@@ -118,13 +118,13 @@ _horizontallyMirrorTable = (table) => {
     return table;
 }
 
-exports.horizontallyMirrorTable = (table) => {
+exports.horizontallyMirrorTable = function(table){
     table = _horizontallyMirrorTable(table);
 
     return table;
 }
 
-exports.verticallyMirrorTable = (table) => {
+exports.verticallyMirrorTable = function(table){
     table = _transponseTable(table);
 
     table = _horizontallyMirrorTable(table);
@@ -134,7 +134,7 @@ exports.verticallyMirrorTable = (table) => {
     return table;
 }
 
-exports.randomizeTableNumbers = (table) => {
+exports.randomizeTableNumbers = function(table){
 
     let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
