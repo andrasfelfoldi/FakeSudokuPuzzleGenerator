@@ -1,6 +1,6 @@
 {
   "name": "fake-sudoku-puzzle-generator",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "This package generates unique solution sudoku puzzles for 4 different difficulty settings by transforming already existing puzzles, hence the name - fake-sudoku-puzzle-generator.",
   "main": "FakeSudokuPuzzleGenerator.js",
   "types": "FakeSudokuPuzzleGenerator.d.ts",
