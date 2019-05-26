@@ -3,7 +3,7 @@ import { getRandomVeryEasy, getRandomEasy, getRandomMedium, getRandomHard } from
 import { shuffleColumns, shuffleRows, rotateTable, transponseTable, horizontallyMirrorTable, verticallyMirrorTable, randomizeTableNumbers } from "./TableTransformer";
 import { getRandomIntBetween } from "./Random";
 
-_transformBaseSudokuPuzzle = function(puzzle){
+const _transformBaseSudokuPuzzle = function(puzzle){
     puzzle = shuffleColumns(puzzle);
     puzzle = shuffleRows(puzzle);
     puzzle = rotateTable(puzzle, getRandomIntBetween(0, 4));

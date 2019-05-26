@@ -10,12 +10,7 @@ Its called **Fake**SudokuPuzzleGenerator because it does not use backtracking or
 
 #### ES6
 ```javascript
-import puzzleGenerator from "fake-sudoku-puzzle-generator";
-```
-
-#### ES5
-```javascript
-puzzleGenerator = require('fake-sudoku-puzzle-generator');
+import { getVeryEasySudoku, getEasySudoku, getMediumSudoku, getHardSudoku } from "fake-sudoku-puzzle-generator";
 ```
 
 #### Generating puzzles

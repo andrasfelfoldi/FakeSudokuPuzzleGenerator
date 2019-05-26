@@ -13,7 +13,7 @@ export const shuffleColumns = function(table){
     return table;
 }
 
-_shuffleRows = function(table){
+const _shuffleRows = function(table){
     let first3xRows = [],
         second3xRows = [],
         third3xRows = [];
@@ -46,7 +46,7 @@ export const shuffleRows = function(table){
     return _shuffleRows(table);
 }
 
-_shuffle1xRows = function(rows3x){
+const _shuffle1xRows = function(rows3x){
     let firstRow = rows3x[0],
         secondRow = rows3x[1],
         thirdRow = rows3x[2];
@@ -61,7 +61,7 @@ _shuffle1xRows = function(rows3x){
     return rows3x;
 }
 
-_transponseTable = function(table){
+const _transponseTable = function(table){
     let rows = [];
     table.forEach(row => rows.push(row.slice()));
 
@@ -79,7 +79,7 @@ export const transponseTable = function(table){
     return _transponseTable(table);
 }
 
-_rotateTable = function(table){
+const _rotateTable = function(table){
     let rows = [];
     table.forEach(row => rows.push(row.slice()));
 
@@ -106,7 +106,7 @@ export const rotateTable = function(table, count){
     return table;
 }
 
-_horizontallyMirrorTable = function(table){
+const _horizontallyMirrorTable = function(table){
     let rows = [];
     table.forEach(row => rows.push(row.slice()));
 
