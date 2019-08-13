@@ -1,6 +1,9 @@
 import { getRandomIntBetween } from "./Random";
-let veryEasy = [
-    [[null, 8, null, null, null, null, null, null, null],
+import { SudokuNumber } from "./SudokuNumber";
+
+let veryEasy: SudokuNumber[][][] = [
+  [
+    [null, 8, null, null, null, null, null, null, null],
     [null, 6, null, null, 1, null, null, null, 5],
     [null, null, 5, 8, null, 2, null, 4, 7],
     [null, null, 8, 4, null, null, null, 9, 1],
@@ -8,9 +11,11 @@ let veryEasy = [
     [null, null, null, 6, null, null, 7, null, null],
     [null, null, null, null, 5, null, null, 3, null],
     [null, null, null, null, null, null, null, null, null],
-    [2, 1, null, null, 6, null, null, null, 9]],
+    [2, 1, null, null, 6, null, null, null, 9]
+  ],
 
-    [[5, null, 2, null, null, null, null, 1, null],
+  [
+    [5, null, 2, null, null, null, null, 1, null],
     [null, null, 7, null, 8, 4, 6, null, null],
     [null, null, null, 3, null, null, null, 2, null],
     [null, 3, null, null, null, 7, null, null, null],
@@ -18,9 +23,11 @@ let veryEasy = [
     [null, null, null, 1, 4, null, null, null, null],
     [null, 9, 8, null, null, null, 5, null, null],
     [1, null, null, 6, null, null, 4, null, null],
-    [null, 4, null, null, 5, null, null, null, null]],
+    [null, 4, null, null, 5, null, null, null, null]
+  ],
 
-    [[null, null, null, null, null, null, 1, null, null],
+  [
+    [null, null, null, null, null, null, 1, null, null],
     [null, 2, null, 1, 7, null, null, null, 4],
     [null, 7, null, null, null, null, 8, null, 9],
     [5, null, null, null, null, 3, null, null, 7],
@@ -28,9 +35,11 @@ let veryEasy = [
     [7, null, 2, null, null, 9, 4, null, null],
     [null, null, 8, null, 3, null, null, null, null],
     [4, null, null, 5, null, null, 9, null, 3],
-    [null, 1, null, null, null, 8, null, null, null]],
+    [null, 1, null, null, null, 8, null, null, null]
+  ],
 
-    [[null, 4, null, null, 6, null, null, 9, null],
+  [
+    [null, 4, null, null, 6, null, null, 9, null],
     [null, null, null, null, 7, null, 8, null, 1],
     [null, null, null, 5, null, 8, 2, null, null],
     [2, null, null, null, 8, null, null, null, 5],
@@ -38,9 +47,11 @@ let veryEasy = [
     [7, null, null, 9, null, 3, null, null, null],
     [null, null, null, null, 5, 4, 6, null, null],
     [null, null, null, null, null, null, null, null, 3],
-    [null, null, null, 7, null, null, null, null, 4]],
+    [null, null, null, 7, null, null, null, null, 4]
+  ],
 
-    [[null, null, null, null, null, null, null, 7, 2],
+  [
+    [null, null, null, null, null, null, null, 7, 2],
     [null, null, null, null, 4, null, 6, null, null],
     [null, null, null, null, null, null, 5, null, null],
     [null, null, 6, 4, null, 3, null, 5, null],
@@ -48,9 +59,11 @@ let veryEasy = [
     [3, 9, 1, 2, null, null, null, 4, null],
     [7, null, null, null, 8, null, null, null, null],
     [null, null, null, 1, null, null, null, null, null],
-    [null, null, 4, 9, 6, null, null, null, 8]],
+    [null, null, 4, 9, 6, null, null, null, 8]
+  ],
 
-    [[null, null, 9, null, 1, 4, null, null, null],
+  [
+    [null, null, 9, null, 1, 4, null, null, null],
     [null, null, null, null, null, null, null, null, null],
     [3, 6, null, null, null, null, 7, null, 4],
     [8, null, 1, null, null, 5, 9, null, null],
@@ -58,9 +71,11 @@ let veryEasy = [
     [null, null, null, null, 7, null, null, null, null],
     [null, null, 4, null, 9, 1, null, 8, null],
     [7, null, null, null, null, null, null, null, 6],
-    [null, null, null, 5, null, null, null, 3, null]],
+    [null, null, null, 5, null, null, null, 3, null]
+  ],
 
-    [[null, 6, null, null, null, 5, null, 3, 2],
+  [
+    [null, 6, null, null, null, 5, null, 3, 2],
     [null, 5, null, null, 4, null, 1, null, null],
     [null, null, null, null, 7, null, null, 6, null],
     [null, 1, 3, null, null, null, null, null, null],
@@ -68,9 +83,11 @@ let veryEasy = [
     [2, null, null, null, null, null, null, null, null],
     [null, 8, null, null, 1, 2, 4, 7, null],
     [null, 4, null, 7, null, null, null, null, 6],
-    [null, null, null, null, 6, null, 8, 9, null]],
+    [null, null, null, null, 6, null, 8, 9, null]
+  ],
 
-    [[null, 1, null, null, null, null, 3, 4, null],
+  [
+    [null, 1, null, null, null, null, 3, 4, null],
     [null, null, 2, null, 4, null, null, null, null],
     [null, null, null, null, null, 1, 7, null, 2],
     [9, null, null, 1, null, null, null, null, 5],
@@ -78,9 +95,11 @@ let veryEasy = [
     [1, null, null, 3, null, null, null, null, 4],
     [null, null, null, 5, 2, 7, null, null, null],
     [null, 9, null, null, 8, 6, null, null, null],
-    [null, null, null, null, null, null, 2, null, null]],
+    [null, null, null, null, null, null, 2, null, null]
+  ],
 
-    [[3, null, null, null, null, null, 5, null, null],
+  [
+    [3, null, null, null, null, null, 5, null, null],
     [8, null, 2, null, null, null, null, 7, null],
     [7, 9, null, null, null, 5, null, null, 2],
     [null, null, null, 3, null, 4, 7, null, null],
@@ -88,11 +107,13 @@ let veryEasy = [
     [null, 1, null, null, 5, 8, null, 9, null],
     [null, null, null, 6, 2, null, null, 5, null],
     [null, 3, null, null, null, null, 8, null, null],
-    [null, null, null, null, null, null, null, 1, null]],
-]
+    [null, null, null, null, null, null, null, 1, null]
+  ]
+];
 
-let easy = [
-    [[null, null, null, null, null, null, 2, null, null],
+let easy: SudokuNumber[][][] = [
+  [
+    [null, null, null, null, null, null, 2, null, null],
     [9, 7, 6, null, null, null, null, 5, null],
     [null, null, null, null, 8, 3, null, null, null],
     [8, null, 1, null, null, null, null, null, null],
@@ -100,9 +121,11 @@ let easy = [
     [null, null, null, 2, null, null, null, null, null],
     [null, null, null, 8, null, null, null, null, 4],
     [null, 4, null, null, 9, 5, 3, null, 2],
-    [7, null, 5, null, null, null, null, null, null]],
+    [7, null, 5, null, null, null, null, null, null]
+  ],
 
-    [[6, null, null, null, null, null, 3, null, null],
+  [
+    [6, null, null, null, null, null, 3, null, null],
     [null, null, 5, null, 3, 7, null, null, null],
     [null, null, null, 5, null, null, null, null, null],
     [null, 7, null, 3, 8, null, null, 4, null],
@@ -110,9 +133,11 @@ let easy = [
     [null, null, 8, null, null, 6, null, 9, null],
     [8, null, null, 6, null, 9, null, null, null],
     [null, null, 4, null, null, 8, 7, null, null],
-    [null, 9, 2, 7, null, null, null, null, 6]],
+    [null, 9, 2, 7, null, null, null, null, 6]
+  ],
 
-    [[null, null, 1, null, null, 9, null, 4, null],
+  [
+    [null, null, 1, null, null, 9, null, 4, null],
     [6, null, null, null, 4, null, null, null, null],
     [null, 2, 8, null, null, null, 9, 3, null],
     [null, null, null, null, null, null, 6, 7, null],
@@ -120,9 +145,11 @@ let easy = [
     [null, null, null, 5, 2, 4, 3, null, null],
     [null, null, null, 1, null, null, 5, 6, null],
     [null, null, 6, null, null, null, null, null, 2],
-    [1, null, 5, 9, null, null, null, null, null]],
+    [1, null, 5, 9, null, null, null, null, null]
+  ],
 
-    [[8, 7, null, null, null, null, null, null, null],
+  [
+    [8, 7, null, null, null, null, null, null, null],
     [9, null, null, null, 4, null, null, 5, null],
     [4, null, null, null, 2, 9, 7, null, null],
     [null, 6, null, null, 7, 5, null, null, 3],
@@ -130,9 +157,11 @@ let easy = [
     [null, null, null, null, null, null, 2, null, null],
     [null, null, null, null, null, 7, null, null, null],
     [null, null, 3, 4, null, null, 9, null, null],
-    [2, 8, 5, null, null, null, null, null, null]],
+    [2, 8, 5, null, null, null, null, null, null]
+  ],
 
-    [[null, null, null, null, null, null, 7, null, null],
+  [
+    [null, null, null, null, null, null, 7, null, null],
     [null, 4, null, null, 5, null, 1, null, null],
     [6, 9, 2, null, null, null, null, 3, null],
     [null, null, 1, null, null, 9, null, null, null],
@@ -140,9 +169,11 @@ let easy = [
     [null, 2, null, 7, null, 4, null, 9, null],
     [7, null, 9, null, null, null, null, null, 3],
     [null, null, null, null, null, null, null, 7, null],
-    [null, 8, null, null, 6, null, null, null, null]],
-    
-    [[5, null, null, null, 1, null, 9, null, 4],
+    [null, 8, null, null, 6, null, null, null, null]
+  ],
+
+  [
+    [5, null, null, null, 1, null, 9, null, 4],
     [null, 9, null, 6, null, null, 7, null, null],
     [6, null, null, null, null, null, null, 1, null],
     [null, null, null, null, null, 3, 5, null, null],
@@ -150,9 +181,11 @@ let easy = [
     [null, 5, 9, 8, null, null, null, null, null],
     [null, null, null, null, null, null, 1, null, null],
     [null, 4, null, 3, null, 8, null, null, 6],
-    [null, 3, null, 9, null, null, null, 4, null]],
-    
-    [[null, 3, null, null, null, null, null, null, 4],
+    [null, 3, null, 9, null, null, null, 4, null]
+  ],
+
+  [
+    [null, 3, null, null, null, null, null, null, 4],
     [null, null, null, 6, null, null, 1, null, null],
     [4, null, null, null, 2, 7, null, null, null],
     [null, null, null, null, 4, null, null, 2, 5],
@@ -160,9 +193,11 @@ let easy = [
     [6, null, 8, null, null, 1, null, null, null],
     [null, null, null, null, 8, null, 7, null, null],
     [null, 1, null, null, null, null, null, 6, null],
-    [null, null, 3, null, null, 5, null, null, 8]],
-    
-    [[null, null, 3, 6, null, 2, null, 9, null],
+    [null, null, 3, null, null, 5, null, null, 8]
+  ],
+
+  [
+    [null, null, 3, 6, null, 2, null, 9, null],
     [null, null, null, 9, null, null, null, null, null],
     [null, null, 6, 1, 7, null, 2, null, null],
     [7, null, null, null, null, null, null, 8, null],
@@ -170,9 +205,11 @@ let easy = [
     [null, null, 9, null, null, null, null, null, null],
     [4, null, null, 7, null, 9, 1, null, null],
     [null, null, null, null, 4, null, null, null, 2],
-    [null, null, null, null, null, 1, 7, 5, null]],
-    
-    [[8, null, 4, 1, null, null, null, null, null],
+    [null, null, null, null, null, 1, 7, 5, null]
+  ],
+
+  [
+    [8, null, 4, 1, null, null, null, null, null],
     [null, null, 1, 9, 3, 2, null, null, 4],
     [null, null, null, null, null, null, 1, null, null],
     [1, 5, null, null, null, null, null, 7, null],
@@ -180,9 +217,11 @@ let easy = [
     [2, null, null, null, null, 5, null, null, null],
     [6, null, null, null, null, 1, null, 5, null],
     [null, null, null, 3, null, null, 2, null, null],
-    [null, null, null, 4, null, null, null, null, 7]],
+    [null, null, null, 4, null, null, null, null, 7]
+  ],
 
-    [[4, null, null, null, null, 1, 8, null, null],
+  [
+    [4, null, null, null, null, 1, 8, null, null],
     [null, null, null, null, 6, null, null, null, 5],
     [null, 5, 1, null, null, null, null, null, null],
     [9, null, 3, 8, 5, null, null, 2, null],
@@ -190,21 +229,25 @@ let easy = [
     [null, null, null, null, null, null, null, null, 9],
     [6, 7, null, null, null, 3, null, 4, null],
     [null, null, null, 4, null, 8, 2, null, null],
-    [null, 3, null, null, null, null, null, null, null]]
-]
+    [null, 3, null, null, null, null, null, null, null]
+  ]
+];
 
-let medium = [
-    [[null, null, null, null, null, null, null, null, null],
+let medium: SudokuNumber[][][] = [
+  [
+    [null, null, null, null, null, null, null, null, null],
     [null, null, 8, null, 2, 6, null, null, null],
     [3, null, null, null, null, null, 1, 8, 9],
     [null, null, null, 9, 5, null, null, null, 3],
-    [7, null, 9, null, null, null, null, null, null, ],
+    [7, null, 9, null, null, null, null, null, null],
     [4, null, null, null, 6, 1, 5, null, null],
     [1, null, null, 3, null, null, 2, null, 5],
     [null, null, null, null, null, null, null, null, null],
-    [null, null, null, 5, 8, null, null, null, null]],
+    [null, null, null, 5, 8, null, null, null, null]
+  ],
 
-    [[null, null, 9, null, 5, null, 2, null, 7],
+  [
+    [null, null, 9, null, 5, null, 2, null, 7],
     [null, null, null, 1, null, null, null, null, null],
     [2, 1, null, null, 6, null, 4, null, 5],
     [1, 4, null, null, 7, null, null, null, null],
@@ -212,9 +255,11 @@ let medium = [
     [null, null, null, 5, 2, 9, null, null, null],
     [null, null, null, 7, null, null, null, null, 8],
     [null, null, 1, null, null, null, null, 3, null],
-    [5, 8, null, null, null, null, null, null, null]],
+    [5, 8, null, null, null, null, null, null, null]
+  ],
 
-    [[1, null, null, null, 7, null, null, 2, null],
+  [
+    [1, null, null, null, 7, null, null, 2, null],
     [null, null, 5, null, null, null, null, null, null],
     [null, 8, null, null, null, 3, 6, null, null],
     [6, 5, null, null, 3, 1, null, null, null],
@@ -222,9 +267,11 @@ let medium = [
     [3, null, 9, null, 6, null, 7, null, 1],
     [5, null, 2, null, null, 4, null, null, null],
     [null, null, null, null, null, null, null, 9, null],
-    [9, null, 4, null, null, null, 8, null, null]],
+    [9, null, 4, null, null, null, 8, null, null]
+  ],
 
-    [[9, 5, null, 1, null, null, 2, null, null],
+  [
+    [9, 5, null, 1, null, null, 2, null, null],
     [null, 7, null, 3, null, null, null, null, null],
     [null, null, null, null, null, 2, null, 6, 9],
     [null, null, null, null, null, null, null, null, null],
@@ -232,9 +279,11 @@ let medium = [
     [null, null, 4, null, 3, 9, null, null, 8],
     [7, null, 6, null, null, null, null, null, 3],
     [8, null, null, null, null, null, 1, 4, 6],
-    [3, null, null, null, null, null, null, 9, 5]],
+    [3, null, null, null, null, null, null, 9, 5]
+  ],
 
-    [[null, 4, null, null, 8, null, null, null, null],
+  [
+    [null, 4, null, null, 8, null, null, null, null],
     [null, null, null, null, 9, 1, 6, null, null],
     [null, null, null, null, null, null, 3, 5, null],
     [5, null, null, null, null, null, null, null, null],
@@ -242,9 +291,11 @@ let medium = [
     [null, null, 7, 9, null, null, null, null, null],
     [7, 3, 9, 1, null, 4, null, 8, null],
     [2, 8, null, null, null, null, null, null, null],
-    [null, null, null, null, null, null, 1, 2, null]],
+    [null, null, null, null, null, null, 1, 2, null]
+  ],
 
-    [[null, 8, null, 5, 4, null, null, null, null],
+  [
+    [null, 8, null, 5, 4, null, null, null, null],
     [null, null, null, null, null, 6, null, 1, 3],
     [null, null, null, null, null, null, 8, 6, null],
     [null, 2, null, null, null, null, null, null, 7],
@@ -252,9 +303,11 @@ let medium = [
     [9, 3, null, null, 6, null, null, null, null],
     [null, 6, null, 2, null, null, 7, null, null],
     [5, null, null, 3, null, null, 4, 2, null],
-    [null, null, 7, null, 5, 1, null, null, null]],
+    [null, null, 7, null, 5, 1, null, null, null]
+  ],
 
-    [[null, null, null, null, null, null, null, null, null],
+  [
+    [null, null, null, null, null, null, null, null, null],
     [null, 8, null, 7, 9, 1, null, null, null],
     [1, null, null, null, null, null, 7, 5, null],
     [null, null, null, null, 3, null, null, null, null],
@@ -262,9 +315,11 @@ let medium = [
     [5, null, 2, 9, 7, 4, null, null, null],
     [8, null, null, 1, null, null, null, null, null],
     [null, null, null, null, 2, null, null, null, 9],
-    [null, null, 4, null, 5, 9, null, 2, null]],
+    [null, null, 4, null, 5, 9, null, 2, null]
+  ],
 
-    [[null, null, null, null, null, null, null, null, null],
+  [
+    [null, null, null, null, null, null, null, null, null],
     [1, null, 5, null, null, null, 2, 8, null],
     [null, null, 6, null, 7, 8, null, null, null],
     [3, null, null, null, null, null, 7, null, null],
@@ -272,9 +327,11 @@ let medium = [
     [null, null, null, 8, null, null, null, null, null],
     [8, null, 3, null, null, null, null, 4, null],
     [2, null, null, 6, null, null, 5, 1, null],
-    [null, null, null, null, null, 4, null, null, 7]],
+    [null, null, null, null, null, 4, null, null, 7]
+  ],
 
-    [[6, 9, null, 1, null, null, null, null, null],
+  [
+    [6, 9, null, 1, null, null, null, null, null],
     [null, null, null, null, 3, null, null, 8, null],
     [3, null, null, 2, null, 9, null, null, null],
     [null, null, 8, null, 1, null, null, 3, null],
@@ -282,9 +339,11 @@ let medium = [
     [5, null, null, null, null, 6, 8, null, null],
     [null, null, 2, 3, null, 8, 4, null, null],
     [null, null, 7, null, 9, 4, 2, null, null],
-    [null, null, null, null, null, null, null, 5, null]],
+    [null, null, null, null, null, null, null, 5, null]
+  ],
 
-    [[null, null, null, null, 7, null, null, 1, null],
+  [
+    [null, null, null, null, 7, null, null, 1, null],
     [4, 6, null, null, 1, null, 3, null, null],
     [null, null, 5, 4, null, null, null, 7, null],
     [7, null, null, null, null, 3, 4, null, null],
@@ -292,11 +351,13 @@ let medium = [
     [6, null, 2, 9, null, null, null, null, 5],
     [null, 8, null, null, 2, null, 5, null, null],
     [null, null, null, null, null, null, null, 2, null],
-    [null, 5, null, null, null, null, null, 9, 1]],
-]
+    [null, 5, null, null, null, null, null, 9, 1]
+  ]
+];
 
-let hard = [
-    [[null, null, null, null, null, 9, 5, null, null],
+let hard: SudokuNumber[][][] = [
+  [
+    [null, null, null, null, null, 9, 5, null, null],
     [null, 4, null, null, null, 2, null, null, 8],
     [null, null, null, 1, null, 3, null, null, 9],
     [null, null, 6, null, null, 5, null, null, null],
@@ -304,9 +365,11 @@ let hard = [
     [null, null, null, 2, 7, 6, null, 3, null],
     [5, 3, null, null, null, null, 1, null, null],
     [null, 1, null, null, null, null, null, 4, 5],
-    [null, null, null, 6, null, null, 8, null, null]],
+    [null, null, null, 6, null, null, 8, null, null]
+  ],
 
-    [[null, null, 3, 2, null, 9, 5, null, null],
+  [
+    [null, null, 3, 2, null, 9, 5, null, null],
     [8, null, null, null, 5, null, null, null, null],
     [null, null, null, null, null, null, null, null, 2],
     [null, 3, null, null, null, 8, null, null, null],
@@ -314,9 +377,11 @@ let hard = [
     [null, 9, null, 1, null, null, null, null, 7],
     [null, null, null, null, null, 6, null, null, 9],
     [null, 6, 1, 3, null, null, null, 8, null],
-    [null, 8, 5, 7, null, null, 3, null, null]],
-    
-    [[5, null, null, null, null, null, null, null, null],
+    [null, 8, 5, 7, null, null, 3, null, null]
+  ],
+
+  [
+    [5, null, null, null, null, null, null, null, null],
     [null, 3, null, 9, 6, null, null, 7, null],
     [2, null, null, null, null, 4, 8, null, null],
     [null, null, 5, null, null, null, null, 8, 1],
@@ -324,9 +389,11 @@ let hard = [
     [1, 6, null, 5, null, null, null, null, 7],
     [3, 8, 7, null, 2, 5, null, null, null],
     [null, null, null, null, null, null, null, null, null],
-    [null, null, null, null, null, 8, null, 6, null]],
+    [null, null, null, null, null, 8, null, 6, null]
+  ],
 
-    [[2, null, null, null, 8, null, null, null, null],
+  [
+    [2, null, null, null, 8, null, null, null, null],
     [null, 4, null, null, null, 9, 6, null, null],
     [null, null, 6, 2, null, null, null, null, null],
     [5, null, null, 1, null, null, null, 6, null],
@@ -334,9 +401,11 @@ let hard = [
     [1, null, 9, 7, null, 8, null, null, 2],
     [null, null, 8, null, null, null, 4, 3, null],
     [3, null, null, null, 7, null, null, null, null],
-    [null, 1, null, 3, null, 5, null, null, null]],
+    [null, 1, null, 3, null, 5, null, null, null]
+  ],
 
-    [[3, null, null, null, null, 9, 1, null, 2],
+  [
+    [3, null, null, null, null, 9, 1, null, 2],
     [null, 5, 8, null, null, null, 9, 7, null],
     [7, null, null, null, null, null, null, null, null],
     [null, null, null, null, 4, 3, null, null, null],
@@ -344,9 +413,11 @@ let hard = [
     [9, null, null, 7, null, null, null, null, null],
     [null, 9, null, null, 6, null, 5, 1, 3],
     [null, null, 2, null, 8, null, 4, null, null],
-    [null, null, 5, null, null, 4, 2, null, null]],
+    [null, null, 5, null, null, 4, 2, null, null]
+  ],
 
-    [[null, null, null, 1, 5, null, 8, 3, null],
+  [
+    [null, null, null, 1, 5, null, 8, 3, null],
     [null, null, 9, null, 7, 4, null, null, null],
     [null, null, null, null, null, null, null, null, 6],
     [null, 9, null, null, 4, 1, null, null, 2],
@@ -354,9 +425,11 @@ let hard = [
     [3, null, 2, null, null, null, null, null, 4],
     [null, 5, null, 9, null, null, null, 8, 3],
     [6, null, null, null, null, null, 4, null, null],
-    [null, 2, null, null, null, null, null, null, null]],
+    [null, 2, null, null, null, null, null, null, null]
+  ],
 
-    [[null, null, 5, null, null, 4, 8, null, null],
+  [
+    [null, null, 5, null, null, 4, 8, null, null],
     [null, 1, null, null, 9, 2, null, null, 3],
     [9, null, 2, null, null, null, null, 5, null],
     [null, 6, null, null, null, null, null, 3, 9],
@@ -364,9 +437,11 @@ let hard = [
     [null, null, null, null, null, null, null, null, null],
     [5, null, null, 4, null, null, null, 8, null],
     [6, null, null, null, 3, 5, null, null, null],
-    [null, null, 9, 1, null, null, null, null, 7]],
+    [null, null, 9, 1, null, null, null, null, 7]
+  ],
 
-    [[8, null, null, 7, null, 5, 9, null, null],
+  [
+    [8, null, null, 7, null, 5, 9, null, null],
     [7, null, 6, 2, null, null, null, null, null],
     [null, 9, null, null, null, null, null, 7, null],
     [null, null, null, null, null, null, null, null, null],
@@ -374,9 +449,11 @@ let hard = [
     [null, null, null, 5, 2, null, null, 1, 4],
     [null, null, null, null, 8, null, null, null, 1],
     [4, null, null, null, null, 1, null, 3, 6],
-    [null, 3, 8, null, null, null, 2, null, null]],
+    [null, 3, 8, null, null, null, 2, null, null]
+  ],
 
-    [[null, null, null, null, 9, null, null, null, 4],
+  [
+    [null, null, null, null, 9, null, null, null, 4],
     [null, 4, null, 1, null, null, null, 6, null],
     [null, 2, 7, null, null, null, null, null, 5],
     [null, 9, null, null, null, null, null, null, null],
@@ -384,9 +461,11 @@ let hard = [
     [null, null, 6, null, null, 4, 1, 5, null],
     [null, 5, 2, null, null, null, null, 7, null],
     [null, null, null, 4, null, 8, null, null, null],
-    [null, null, 3, null, null, 5, null, 4, null]],
+    [null, null, 3, null, null, 5, null, 4, null]
+  ],
 
-    [[null, null, null, null, null, null, 9, null, 2],
+  [
+    [null, null, null, null, null, null, 9, null, 2],
     [null, null, 3, null, null, null, null, 7, null],
     [null, null, 2, 4, 8, null, null, null, null],
     [null, 9, null, 2, null, 6, 5, null, 3],
@@ -394,29 +473,38 @@ let hard = [
     [8, null, null, 5, null, null, null, null, null],
     [null, 7, null, null, null, null, null, null, null],
     [null, 2, null, 9, 1, 8, null, null, null],
-    [1, 6, null, null, 2, null, null, null, null]],
-]
+    [1, 6, null, null, 2, null, null, null, null]
+  ]
+];
 
-export const getRandomVeryEasy = function(){
-    let puzzle = [];
-    veryEasy[getRandomIntBetween(0, veryEasy.length)].forEach(row => puzzle.push(row.slice()));
-    return puzzle;
-}
+export const getRandomVeryEasy = function(): SudokuNumber[][] {
+  let puzzle: SudokuNumber[][] = [];
+  veryEasy[getRandomIntBetween(0, veryEasy.length)].forEach(row =>
+    puzzle.push(row.slice())
+  );
+  return puzzle;
+};
 
-export const getRandomEasy = function(){
-    let puzzle = [];
-    easy[getRandomIntBetween(0, easy.length)].forEach(row => puzzle.push(row.slice()));
-    return puzzle;
-}
+export const getRandomEasy = function(): SudokuNumber[][] {
+  let puzzle: SudokuNumber[][] = [];
+  easy[getRandomIntBetween(0, easy.length)].forEach(row =>
+    puzzle.push(row.slice())
+  );
+  return puzzle;
+};
 
-export const getRandomMedium = function(){
-    let puzzle = [];
-    medium[getRandomIntBetween(0, medium.length)].forEach(row => puzzle.push(row.slice()));
-    return puzzle;
-}
+export const getRandomMedium = function(): SudokuNumber[][] {
+  let puzzle: SudokuNumber[][] = [];
+  medium[getRandomIntBetween(0, medium.length)].forEach(row =>
+    puzzle.push(row.slice())
+  );
+  return puzzle;
+};
 
-export const getRandomHard = function(){
-    let puzzle = [];
-    hard[getRandomIntBetween(0, hard.length)].forEach(row => puzzle.push(row.slice()));
-    return puzzle;
-}
+export const getRandomHard = function(): SudokuNumber[][] {
+  let puzzle: SudokuNumber[][] = [];
+  hard[getRandomIntBetween(0, hard.length)].forEach(row =>
+    puzzle.push(row.slice())
+  );
+  return puzzle;
+};
