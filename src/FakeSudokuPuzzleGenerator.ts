@@ -81,6 +81,7 @@ export const getHardSudoku = function(): SudokuNumber[][] {
   return puzzle;
 };
 
+export type Difficulty = "VeryEasy" | "Easy" | "Medium" | "Hard";
 /**
  * @Method: Returns a puzzle with the required difficulty.
  * @Param String of either one of the following values:
@@ -88,7 +89,7 @@ export const getHardSudoku = function(): SudokuNumber[][] {
  * Case does not matter. If the value is omitted or does not match any, a VeryEasy puzzle will be returned.
  * @Return {(number | null)[][];}
  */
-export const getSudoku = function(difficulty: string): SudokuNumber[][] {
+export const getSudoku = function(difficulty: Difficulty): SudokuNumber[][] {
   switch (difficulty + "".toLowerCase()) {
     case "veryeasy":
       return getVeryEasySudoku();
