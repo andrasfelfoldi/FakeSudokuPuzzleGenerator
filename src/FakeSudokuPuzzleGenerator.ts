@@ -90,7 +90,7 @@ export type Difficulty = "VeryEasy" | "Easy" | "Medium" | "Hard";
  * @Return {(number | null)[][];}
  */
 export const getSudoku = function(difficulty: Difficulty): SudokuNumber[][] {
-  switch (difficulty + "".toLowerCase()) {
+  switch ((difficulty + "").toLowerCase()) {
     case "veryeasy":
       return getVeryEasySudoku();
     case "easy":
